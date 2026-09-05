@@ -156,7 +156,7 @@ detector.benchmark(image, num_runs=1000, conf_thres=0.6, warmup=5)
 若存在，则可视化时显示类别名称而非 ID；否则使用默认数字标签。
 可使用 utils/clsname_from_pt.py 从 .pt 模型提取并生成该文件：
 ```python
-python utils/clsname_from_pt.py models/fire/fire_smoke_yolov8.pt
+python utils/clsname_from_pt.py models/yolo.pt
 ```
 
 
@@ -164,7 +164,6 @@ python utils/clsname_from_pt.py models/fire/fire_smoke_yolov8.pt
 如果遇到onnx或者tensorrt使用CUDA加速失败，可能存在以下原因：
 1. 没有安装cudnn
 2. onnxuntime-gpu版本与cuda版本不匹配
-
 
 
 
