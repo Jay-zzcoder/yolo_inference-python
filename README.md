@@ -13,6 +13,7 @@
 ---
 
 ## 目录结构
+```bash
 ├── export/ # 模型导出脚本
 │ ├── export_onnx.py # PyTorch 模型 → ONNX
 │ └── export_trt.py # ONNX → TensorRT 引擎
@@ -29,7 +30,7 @@
 └── utils/ # 辅助工具
 │ ├── clsname_from_pt.py # 从 .pt 提取类别名称生成 .txt
 ├── requirements_win.txt (windows系统下的依赖, GPU: RTX3070ti, cuda版本: 12.0)
-
+```
 
 ## 1. 模型导出
 
