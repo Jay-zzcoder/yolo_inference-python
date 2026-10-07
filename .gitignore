@@ -1,2 +1,2 @@
-models/yoloe-v8s-seg-pf.engine
+models/yoloe/yoloe-v8s-seg-pf.engine
 choose_and_follow.py
