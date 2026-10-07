@@ -3,6 +3,12 @@
 
 本仓库提供了一套完整的 YOLO 目标检测python解决方案，支持 **PyTorch (.pt)**、**ONNX Runtime** 和 **TensorRT** 三种推理后端，并包含模型导出、类别标签提取、性能基准测试等工具。项目结构清晰，适合快速集成到实际应用中。
 
+## 动态
+
+- **2026-10-07**：支持 YOLOE-Seg Prompt-free的 ONNX 和 TensorRT 推理。
+
+
+
 ## 特性
 
 - **多后端支持**：同一套接口，可无缝切换 PyTorch、ONNX 或 TensorRT 推理。
@@ -22,15 +28,18 @@
 │ ├── yolo_detector.py # PyTorch 后端（基于 ultralytics）
 │ ├── yolo_detector_onnx.py # ONNX Runtime 后端
 │ └── yolo_detector_trt.py # TensorRT 后端
+│ └── yoloe_detector_onnx.py # YOLOE-Seg Prompt-free的 ONNX 后端
+│ └── yoloe_detector_trt.py # YOLOE-Seg Prompt-free的 TensorRT 后端
 ├── models/ # 模型与测试数据
-│ ├── fire/ # 示例：烟火检测模型
-│ │ ├── best.pt / .onnx / .engine
-│ │ ├── fire_smoke_yolov8.*
-│ │ ├── *.txt # 类别标签文件
+│ ├── yoloe/ 
+│ │ ├── yoloe-v8s-seg-pf.engine  #YOLOE-Seg Prompt-free TRT ，模型
+│ │ ├── yoloe-v8s-seg-pf.onnx   #YOLOE-Seg Prompt-free ONNX 模型 
+│ │ ├── ram_tag_list.txt # 类别标签文件
 │ │ └── test.jpg # 测试图片
 └── utils/ # 辅助工具
 │ ├── clsname_from_pt.py # 从 .pt 提取类别名称生成 .txt
 ├── requirements_win.txt (windows系统下的依赖, GPU: RTX3070ti, cuda版本: 12.0)
+├── requirements_ubuntu.txt (Ubuntu系统下的依赖, GPU: RTX3090, cuda版本: 12.8)
 ```
 
 ## 1. 模型导出

@@ -3,6 +3,10 @@
 
 This repository provides a complete YOLO object detection Python solution supporting three inference backends: **PyTorch (.pt)**, **ONNX Runtime**, and **TensorRT**. It also includes model export, class label extraction, performance benchmarking, and other utilities. The project is well-structured and suitable for rapid integration into real-world applications.
 
+## News
+
+- **2026-10-07**：Supports ONNX and TensorRT inference for YOLOE-Seg Prompt-free.
+
 ## Features
 
 - **Multi-backend support**: Seamlessly switch between PyTorch, ONNX, or TensorRT inference via a unified interface.
@@ -21,15 +25,17 @@ This repository provides a complete YOLO object detection Python solution suppor
 │   ├── yolo_detector.py     # PyTorch backend (based on ultralytics)
 │   ├── yolo_detector_onnx.py # ONNX Runtime backend
 │   └── yolo_detector_trt.py  # TensorRT backend
+│   ├── yoloe_detector_onnx.py # YOLOE-Seg Prompt-free ONNX Runtime backend
+│   └── yoloe_detector_trt.py  # YOLOE-Seg Prompt-free TensorRT backend
 ├── models/                  # Models and test data
-│   └── fire/                # Example: fire/smoke detection model
-│       ├── best.pt / .onnx / .engine
-│       ├── fire_smoke_yolov8.*
-│       ├── *.txt            # Class label files
-│       └── test.jpg         # Test image
+│   └── yoloe/                # Example: fire/smoke detection model
+│       ├── yoloe-v8s-seg-pf.engine  #YOLOE-Seg Prompt-free TRT model 
+│       ├── yoloe-v8s-seg-pf.onnx   #YOLOE-Seg Prompt-free ONNX model 
+│       └── ram_tag_list.txt # label file
 └── utils/                   # Helper tools
     └── clsname_from_pt.py   # Extract class names from .pt and generate .txt
 ├── requirements_win.txt     (Windows system dependencies, GPU: RTX3070ti, CUDA version: 12.0)
+├── requirements_ubuntu.txt (Ubuntu system dependencies, GPU: RTX3090, CUDA version: 12.8)
 ```
 
 ## 1. Model Export
